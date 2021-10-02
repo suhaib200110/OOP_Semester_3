@@ -43,8 +43,4 @@ int main()
     cin>>student_number;
     student_number=student_number-1;
     s[student_number].display();
-    return 0;
-      
-    
-
-}
+    return 0;}
