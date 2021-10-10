@@ -1,26 +1,36 @@
-#include <iostream> 
-#include <conio.h>  
-#include <string> 
-#include<string.h>
-using namespace std; 
-class copy_concatenate { 
-    char* s1 = NULL; 
-public: 
-copy_concatenate(const char*); 
-copy_concatenate(const copy_concatenate& t); 
-void concatenate(const char *); 
-void display(); 
-~copy_concatenate(); 
-}; 
-copy_concatenate::copy_concatenate(const char* c) { s1 = new char[strlen(c)]; 
-strcpy(s1, c); 
-} 
-copy_concatenate::copy_concatenate(const copy_concatenate& t) { s1 = t.s1; 
-} 
-void copy_concatenate::concatenate(const char* p) { int length = strlen(s1); 
-int destinationLength = strlen(p); 
-int position=0; 
-char* temp = new char[length+destinationLength ]; for (int i = 0; i < length; i++)
-{ 
-temp[i] = s1[i]; 
-} 
+#include <iostream>
+using namespace std;
+
+class copy_concatenate
+{
+    char x;
+    public:
+    copy_concatenate(const char *str)
+    {
+        x = *str;
+    }
+
+    copy_concatenate(const copy_concatenate &c1)
+    {
+        x=c1.x;
+    }
+
+    ~copy_concatenate()
+    {
+        cout<<"\nDestructor called\n";
+    }
+    void display()
+    {
+        cout<<"The concatenated string will be : " <<x;
+    }
+};
+
+int main()
+{
+    copy_concatenate obj1("S");
+    copy_concatenate obj2= obj1;
+    cout<<"\n\nFor object #1: ";
+    obj1.display();
+    cout<<"\n\nFor object #2: ";
+    obj2.display();
+}
