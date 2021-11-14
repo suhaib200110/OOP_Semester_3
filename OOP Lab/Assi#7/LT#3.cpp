@@ -27,6 +27,7 @@ travel add(travel e)
     travel temp;
     temp.km = km + e.km;
     temp.hr = hr + e.hr; 
+    return temp;
 }
 
 };
