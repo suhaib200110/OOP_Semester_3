@@ -16,16 +16,16 @@ class account
 
     void display()
     {
-        cout<<"\nAccount ID: "<<endl<<"\nAmmount: "<<ammount<<endl;
+        cout<<"\nAccount ID: "<<account_id<<"\tAmmount: "<<ammount<<endl;
     }
 };
 
 int main()
 {
     int num;
-    account *ptr[num];
     cout<<"\nEnter number of accounts: ";
     cin>>num;
+    account *ptr[num];
     for (int i=0;i<num;i++)
     {
         ptr[i] = new account;
@@ -35,5 +35,10 @@ int main()
     for (int i=0;i<num;i++)
     {
         ptr[i]->display();
+    }
+
+    for(int i=0; i<num ; i++)
+    {
+    delete ptr[i];
     }
 }

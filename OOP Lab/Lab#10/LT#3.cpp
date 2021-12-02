@@ -51,5 +51,10 @@ int main()
 
     cout<<"\nThe average marks of the class are "<<total_class/num<<endl;
 
+    for(int i=0; i<num; i++)
+    {
+    delete s[i];
+    }
+
     
 }
